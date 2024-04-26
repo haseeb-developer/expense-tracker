@@ -1,0 +1,240 @@
+/* Reset CSS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #202225;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #2f3136;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+main {
+  padding: 10px;
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-right: 10px;
+  background-color: #40444b;
+  color: #ffffff;
+}
+
+select {
+  cursor: pointer;
+}
+
+button {
+  background-color: #7289da;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #677bc4;
+}
+
+.filter-container,
+.date-filter-container {
+  margin-bottom: 20px;
+}
+
+.date-filter-container label {
+  margin-right: 10px;
+}
+
+.date-filter-container input[type="date"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #40444b;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.date-filter-container input[type="date"]:hover,
+.date-filter-container input[type="date"]:focus {
+  background-color: #7289da;
+  color: #ffffff;
+}
+
+.expenses-list {
+  margin-top: 20px;
+}
+
+.expense-item {
+  background-color: #40444b;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.expense-item p {
+  margin-bottom: 5px;
+}
+
+.expense-item button {
+  background-color: #7289da;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.expense-item button:hover {
+  background-color: #677bc4;
+}
+
+.total-expenses {
+  margin-top: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #2f3136;
+  margin: 20% auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.close {
+  color: #ccc;
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal h2 {
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.modal input[type="text"],
+.modal input[type="number"],
+.modal select {
+  width: calc(50% - 10px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #40444b;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.modal input[type="date"] {
+  width: calc(50% - 10px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #40444b;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.modal button {
+  background-color: #7289da;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.modal button:hover {
+  background-color: #677bc4;
+}
+
+.modal input[type="text"]:focus,
+.modal input[type="number"]:focus,
+.modal select:focus {
+  outline: none;
+  box-shadow: 0 0 5px #7289da;
+}
+
+@keyframes editButton {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.expense-item button.edit {
+  animation: editButton 1s ease;
+}

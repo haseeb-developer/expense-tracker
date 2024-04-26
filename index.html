@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Expense Tracker</h1>
+      </header>
+      <main>
+        <form id="expense-form" class="expense-form">
+          <div class="input-group">
+            <input
+              type="text"
+              id="expense-input"
+              placeholder="Enter expense description"
+              required
+            />
+            <input
+              type="number"
+              id="amount-input"
+              placeholder="Enter amount"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <select id="category-select" required>
+              <option value="" disabled selected>Select category</option>
+              <option value="Food">Food</option>
+              <option value="Transportation">Transportation</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Utilities">Utilities</option>
+              <option value="Others">Others</option>
+            </select>
+            <button type="submit">Add Expense</button>
+          </div>
+        </form>
+        <div class="filter-container">
+          <label for="category-filter">Filter by Category:</label>
+          <select id="category-filter">
+            <option value="all">All</option>
+            <option value="Food">Food</option>
+            <option value="Transportation">Transportation</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Utilities">Utilities</option>
+            <option value="Others">Others</option>
+          </select>
+        </div>
+        <div class="date-filter-container">
+          <label for="start-date">Start Date:</label>
+          <input type="date" id="start-date" />
+          <label for="end-date">End Date:</label>
+          <input type="date" id="end-date" />
+          <button id="filter-by-date">Filter by Date</button>
+        </div>
+        <div class="expenses-list" id="expenses-list">
+          <!-- Expense items will be added dynamically here -->
+        </div>
+        <div class="total-expenses" id="total-expenses">
+          Total Expenses: $<span id="total-amount">0</span>
+        </div>
+        <button id="delete-all-data">Delete All Data</button>
+      </main>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-edit-modal" class="close">&times;</span>
+        <h2>Edit Expense</h2>
+        <form id="edit-expense-form">
+          <input
+            type="text"
+            id="edit-description"
+            placeholder="Enter expense description"
+            required
+          />
+          <input
+            type="number"
+            id="edit-amount"
+            placeholder="Enter amount"
+            required
+          />
+          <select id="edit-category" required>
+            <option value="" disabled selected>Select category</option>
+            <option value="Food">Food</option>
+            <option value="Transportation">Transportation</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Utilities">Utilities</option>
+            <option value="Others">Others</option>
+          </select>
+          <input type="date" id="edit-date" required />
+          <button type="button" id="save-edit">Save</button>
+          <button type="button" id="cancel-edit">Cancel</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </body>
+</html>
